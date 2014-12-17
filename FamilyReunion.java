@@ -1,16 +1,22 @@
 import java.util.*;
 
+/*
+CS 4141 Final Assignment
+@author Kyle Burke 
+edited by:Ben Higman
+*/
+
 public class FamilyReunion {
 
-    String name = null;
+    private String name = null;
 
-    ArrayList<ArrayList<String>> families;
+    private ArrayList<ArrayList<String>> families;
     
-    ArrayList<ArrayList<Integer>> ages;
+    private ArrayList<ArrayList<Integer>> ages;
 
-    public ArrayList<String> NamesOfFamilyContacts = new ArrayList<String>();
+    private ArrayList<String> NamesOfFamilyContacts = new ArrayList<String>();
     
-    public ArrayList<String> ContactPhoneNumbers;
+    private ArrayList<String> ContactPhoneNumbers;
     
     public FamilyReunion(String name) {
         this.name = name;
@@ -81,7 +87,6 @@ public class FamilyReunion {
     }
     
     //public String displayOldestWithAge() {...}  TODO: make this work!
-    
     public static void main(String[] args) {
             
     
