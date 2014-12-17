@@ -6,13 +6,11 @@ For use with FamilyReunion.java
 
 public class Family{
 
-	private String familyName;
 	private ArrayList<Person> familyMembers;
 	private Person contact;
 
 	// Constructor
-	public Family (String familyName, Person contact){
-		this.familyName = familyName;
+	public Family (Contact contact){
 		this.contact = contact;
 		this.familyMembers = new ArrayList<Person>();
 		this.addPerson(contact);
@@ -38,6 +36,11 @@ public class Family{
 		return s;
 	}
 
+	// getFamilySize method: returns the size of the family
+	public int getFamilySize(){
+		return this.familyMembers.size();
+	}
+
 	// toString implementation
 	public String toString(){
 		String s = "";
@@ -49,8 +52,8 @@ public class Family{
 
 	// Unit test
 	public static void main(String[] args){
-		Person ben = new Contact(22, "Ben", "603-333-4444");
-		Family family = new Family("Higman", ben);
+		Contact ben = new Contact(22, "Ben", "603-333-4444");
+		Family family = new Family(ben);
 
 		System.out.println(family);
 
@@ -58,5 +61,7 @@ public class Family{
 		family.addPerson(dan);
 
 		System.out.println(family.displayNames());
+
+		System.out.println(family.getContact());
 	}
 }

@@ -21,10 +21,12 @@ public class Main {
                 System.out.println(i + ": See names and ages.");
                 i++;
                 System.out.println(i + ": See guests with total people.");
+                i++;
+                System.out.println(i + ": Exit registry.");
                 int selection = Integer.parseInt(input.readLine());
                 i = 1;
                 if (selection == i) {
-                    addAPerson(reunion, new ArrayList<Integer>(), new ArrayList<String>());
+                    addAPerson(reunion, new Family());
                 }
                 i++;
                 if (selection == i) {
@@ -42,6 +44,10 @@ public class Main {
                 if (selection == i) {
                     System.out.println(reunion);
                 }
+                i++;
+                if (selection == i) {
+                    System.exit(0);
+                }
             }
             
         } catch (IOException ioe) {
@@ -49,16 +55,18 @@ public class Main {
         }
     }
     
-    public static void addAPerson(FamilyReunion reunion, ArrayList<Integer> ages, ArrayList<String> names) {
+    public static void addAPerson(FamilyReunion reunion, Family family) {
         BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
         try {
             System.out.println("What is the person's name?");
             String name = input.readLine();
+
             System.out.println("How old is the person?");
             int age = Integer.parseInt(input.readLine());
-            ages.add(age);
-            names.add(name);
-            System.out.println("Want to add someone else? (y/N)");
+
+            Person guest = new Person(age, name);
+            System.out.println("Want to add someone else? (y/n)");
+
             if (input.readLine().toLowerCase().equals("y")) {
                 addAPerson(reunion, ages, names);
             } else {

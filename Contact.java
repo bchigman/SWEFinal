@@ -16,11 +16,12 @@ public class Contact extends Person{
 	}
 
 	public String toString(){
-		return super.toString() + " Phone: " + this.phoneNumber;
+		return this.getName() + ": " + this.phoneNumber;
 	}
 
 	public static void main(String[] args){
 		Contact contact = new Contact(22, "Ben", "603-333-4444");
+		System.out.println(contact.getName());
 		System.out.println(contact);
 	}
 }

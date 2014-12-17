@@ -5,7 +5,7 @@ Person class for use with FamilyReunion.java
 
 public class Person {
 
-	private int age = 0;
+	private int age;
 	private String name;
 
 	// Normal person constructor
@@ -19,16 +19,19 @@ public class Person {
 		return this.name;
 	}
 
+	// getAge method
+	public int getAge(){
+		return this.age;
+	}
+
 	// toString method
 	public String toString(){
-		return this.name + " age: "+ this.age;
+		return this.name + ", "+ this.age;
 	}
 
 	// Unit test
 	public static void main(String[] args){
 		Person jim = new Person(21, "Jim John");
-		Person bob = new Person(23, "Bob Dude");
 		System.out.println(jim);
-		System.out.println(bob);
 	}
 }
