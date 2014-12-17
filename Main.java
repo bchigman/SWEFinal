@@ -26,7 +26,7 @@ public class Main {
                 int selection = Integer.parseInt(input.readLine());
                 i = 1;
                 if (selection == i) {
-                    addAPerson(reunion, new Family());
+                    addGuest(reunion, new Family());
                 }
                 i++;
                 if (selection == i) {
@@ -55,7 +55,7 @@ public class Main {
         }
     }
     
-    public static void addAPerson(FamilyReunion reunion, Family family) {
+    public static void addGuest(FamilyReunion reunion, Family family) {
         BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
         try {
             System.out.println("What is the person's name?");
@@ -65,18 +65,17 @@ public class Main {
             int age = Integer.parseInt(input.readLine());
 
             Person guest = new Person(age, name);
+            family.addPerson(guest);
             System.out.println("Want to add someone else? (y/n)");
 
             if (input.readLine().toLowerCase().equals("y")) {
-                addAPerson(reunion, ages, names);
+                addGuest(reunion, family);
             } else {
                 System.out.println("What is the contact's phone number?");
                 String phone = input.readLine();
-                if (ages.size() == 1) {
-                    reunion.addOnePersonFamily(names.get(0), ages.get(0), phone);
-                } else {
-                    reunion.addMultiPersonFamily(phone, names, ages);
-                }
+                family.getContact().setName(family.getFamilyMember(0).getName());
+                family.getContact().setPhoneNumber(phone);
+                reunion.addFamily(family);
             }
         } catch (IOException ioe) {
             System.err.println(ioe.getMessage());

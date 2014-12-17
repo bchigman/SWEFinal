@@ -38,15 +38,25 @@ public class FamilyReunion {
     }
     
     public String displayNames() {
-       return "";
+       String s = "";
+       for(Family family : this.families){
+            s += "" + family + "\n";
+       }
+       return s;
     }
     
     public String displayNamesAndAges() {
-       return "";
+        String s = "";
+         s += "The " + this.reunionName + " Family Reunion!\n" + "Guests: " + this.getGuestNumber() + "\n";
+        for(Family family : this.families){
+           s += family.displayNamesAndAges();
+        }
+        return s;
     }
 
     public String toString() {
-        return "The " + this.reunionName + " Family Reunion!\n" + "Guests: " + this.getGuestNumber() + "\n";
+        return "The " + this.reunionName + " Family Reunion!\n" 
+            + "Guests: " + this.getGuestNumber() + "\n" + this.displayNames();
     }
     
     //public String displayOldestWithAge() {...}  TODO: make this work!
@@ -59,6 +69,8 @@ public class FamilyReunion {
 
         System.out.println(reunion.displayPhoneNumbers());
         System.out.println(reunion);
+        System.out.println(reunion.displayNames());
+        System.out.println(reunion.displayNamesAndAges());
     
     }
 }

@@ -7,10 +7,15 @@ For use with FamilyReunion.java
 public class Family{
 
 	private ArrayList<Person> familyMembers;
-	private Person contact;
+	private Contact contact;
 
-	// Constructor
-	public Family (Contact contact){
+	// Constructors
+	public Family() {
+		this.contact = new Contact();
+		this.familyMembers = new ArrayList<Person>();
+	}
+
+	public Family(Contact contact){
 		this.contact = contact;
 		this.familyMembers = new ArrayList<Person>();
 		this.addPerson(contact);
@@ -21,17 +26,39 @@ public class Family{
 		this.familyMembers.add(person);
 	}
 
+	// method to return the arraylist representation of the family
+	public ArrayList<Person> getFamilyMembers(){
+		return this.familyMembers;
+	}
+
+	public Person getFamilyMember(int i){
+		return this.familyMembers.get(i);
+	}
 
 	// getContact method: for getting this family's contact
-	public Person getContact(){
+	public Contact getContact(){
 		return this.contact;
+	}
+
+	// setContact method
+	public void setContact(Contact contact){
+		this.contact = contact;
 	}
 
 	// displayNames method: displays only names of those in family
 	public String displayNames(){
 		String s = "";
 		for(Person person : this.familyMembers){
-			s += person.getName() + "\n";
+			s += " " + person.getName() + "\n";
+		}
+		return s;
+	}
+
+	public String displayNamesAndAges(){
+		String s = "";
+		s += "Coming with: " + this.contact.getName() + "\n";
+		for(Person person : this.familyMembers){
+			s += " " + person.getName() + ", " + person.getAge() +"\n";
 		}
 		return s;
 	}
@@ -44,9 +71,7 @@ public class Family{
 	// toString implementation
 	public String toString(){
 		String s = "";
-		for(Person person : this.familyMembers){
-			s += "" + person.toString() + "\n";
-		}
+		s = "Coming with: " + this.contact.getName() + "\n" + this.displayNames();
 		return s;
 	}
 
@@ -61,6 +86,8 @@ public class Family{
 		family.addPerson(dan);
 
 		System.out.println(family.displayNames());
+
+		System.out.println(family.displayNamesAndAges());
 
 		System.out.println(family.getContact());
 	}

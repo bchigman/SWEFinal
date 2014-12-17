@@ -5,8 +5,14 @@ Person class for use with FamilyReunion.java
 
 public class Person {
 
-	private int age;
-	private String name;
+	protected int age;
+	protected String name;
+
+	// null constructor
+	public Person(){
+		this.age = 0;
+		this.name = "";
+	}
 
 	// Normal person constructor
 	public Person(int age, String name){
