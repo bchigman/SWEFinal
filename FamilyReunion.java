@@ -14,7 +14,7 @@ public class FamilyReunion {
     
     private ArrayList<ArrayList<Integer>> ages;
 
-    private ArrayList<String> NamesOfFamilyContacts = new ArrayList<String>();
+    private ArrayList<String> NamesOfFamilyContacts;
     
     private ArrayList<String> ContactPhoneNumbers;
     

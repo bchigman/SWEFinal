@@ -24,7 +24,13 @@ public class Family{
 	}
 
 
-	public String displayFamily(){
+	// getContact method: for getting this family's contact
+	public Person getContact(){
+		return this.contact;
+	}
+
+	// displayNames method: displays only names of those in family
+	public String displayNames(){
 		String s = "";
 		for(Person person : this.familyMembers){
 			s += person.getName() + "\n";
@@ -36,7 +42,6 @@ public class Family{
 	public String toString(){
 		String s = "";
 		for(Person person : this.familyMembers){
-			//System.out.println(person);
 			s += "" + person.toString() + "\n";
 		}
 		return s;
@@ -44,7 +49,7 @@ public class Family{
 
 	// Unit test
 	public static void main(String[] args){
-		Person ben = new Person(22, "Ben", "603-333-4444");
+		Person ben = new Contact(22, "Ben", "603-333-4444");
 		Family family = new Family("Higman", ben);
 
 		System.out.println(family);
@@ -52,6 +57,6 @@ public class Family{
 		Person dan = new Person(20, "Dan");
 		family.addPerson(dan);
 
-		System.out.println(family.displayFamily());
+		System.out.println(family.displayNames());
 	}
 }
