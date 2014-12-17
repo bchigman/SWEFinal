@@ -5,14 +5,15 @@ Person class for use with FamilyReunion.java
 
 public class Person {
 
-	int age = 0;
-	String name = "";
-	String phone = "";
+	private int age = 0;
+	private String name;
+	private String phone;
 
 	// Normal person constructor
 	public Person(int age, String name){
 		this.age = age;
 		this.name = name;
+		this.phone = "";
 	}
 
 	// Contact person constructor
@@ -22,10 +23,16 @@ public class Person {
 		this.phone = phone;
 	}
 
+	// getName method
+	public String getName(){
+		return this.name;
+	}
+
+	// toString method
 	public String toString(){
 		String s = "";
 		s = this.name + " age: "+ this.age;
-		if(!this.phone.equals("")){
+		if(!this.phone.isEmpty()){
 			s += " Phone: " + this.phone;
 		}
 		return s;

@@ -8,7 +8,7 @@ edited by:Ben Higman
 
 public class FamilyReunion {
 
-    private String name = null;
+    private String name;
 
     private ArrayList<ArrayList<String>> families;
     
