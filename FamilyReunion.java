@@ -50,7 +50,7 @@ public class FamilyReunion {
         this.NamesOfFamilyContacts.add(names.get(0));
     }
     
-    public String DisplayPhoneNumbers() {
+    public String displayPhoneNumbers() {
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < this.ages.size(); i++) {
             builder.append(this.NamesOfFamilyContacts.get(i) + ": " + this.ContactPhoneNumbers.get(i) + "\n");
@@ -58,7 +58,7 @@ public class FamilyReunion {
         return builder.toString();
     }
     
-    public String DisplayNames() {
+    public String displayNames() {
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < this.ages.size(); i++) {
             builder.append("Coming with: " + this.NamesOfFamilyContacts.get(i) + "\n");
@@ -69,7 +69,7 @@ public class FamilyReunion {
         return builder.toString();
     }
     
-    public String DisplayNamesAndAges() {
+    public String displayNamesAndAges() {
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < this.ages.size(); i++) {
             builder.append("Coming with: " + this.NamesOfFamilyContacts.get(i) + "\n");
@@ -83,7 +83,7 @@ public class FamilyReunion {
     //public String displayOldestWithAge() {...}  TODO: make this work!
     
     public static void main(String[] args) {
-    
+            
     
     }
 }

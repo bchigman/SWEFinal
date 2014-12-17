@@ -28,15 +28,15 @@ public class Main {
                 }
                 i++;
                 if (selection == i) {
-                    System.out.println(reunion.DisplayNames());
+                    System.out.println(reunion.displayNames());
                 }
                 i++;
                 if (selection == i) {
-                    System.out.println(reunion.DisplayPhoneNumbers());
+                    System.out.println(reunion.displayPhoneNumbers());
                 }
                 i++;
                 if (selection == i) {
-                    System.out.println(reunion.DisplayNamesAndAges());
+                    System.out.println(reunion.displayNamesAndAges());
                 }
                 i++;
                 if (selection == i) {
